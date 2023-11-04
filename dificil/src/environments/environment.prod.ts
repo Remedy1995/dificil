@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiURL: 'https://malacko.herokuapp.com'
+  apiURL: 'https://www.dificilsecuritypremier.com/'
 };
