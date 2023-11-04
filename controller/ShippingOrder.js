@@ -8,7 +8,15 @@ const axios = require('axios');
 
 exports.createShippingOrder = async (req, res, next) => {
    const email = req.body.email;
+
+   if (!req.body.destination) {
+      res.status(404).json({
+         message: 'Please input your destination country to search'
+      })
+      return false;
+   }
    ShippingOrder.find({ 'email': new RegExp(email, 'i') }).then(data => {
+      console.log('my email data',data)
       if (data.length === 0) {
          //if email does not exist record new data;
          const country = req.body.country.replace(/[^a-zA-Z ]/g, "");;
@@ -16,7 +24,7 @@ exports.createShippingOrder = async (req, res, next) => {
          const data = [];
          axios.get(process.env.MAP_URL + `${destination}`)
             .then(response => {
-               console.log('The link is ',process.env.MAP_URL)
+               console.log('The link is ', process.env.MAP_URL)
                data.push(response.data);
                data.forEach(async number => {
                   const geodata = number.results[0].locations[0].latLng;
@@ -103,6 +111,10 @@ exports.createShippingOrder = async (req, res, next) => {
                         console.log(doc.consignment_number)
                         sendEmail.sendMail(doc);//send email
                      });
+               })
+            }).catch(error => {
+               res.status(500).json({
+                  message: error.message
                })
             })
       }

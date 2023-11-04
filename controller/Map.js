@@ -1,6 +1,12 @@
 const axios = require('axios');
 exports.searchMapCordinates = (req, res, next) => {
   const geolocation = req.body.geolocation;
+
+  if (!geolocation) {
+    return res.status(404).json({
+      message: "Please input user location to search"
+    })
+  }
   const formatted = geolocation.replace(/[^a-zA-Z ]/g, "");
   const data = [];
   axios.get(`http://www.mapquestapi.com/geocoding/v1/address?key=5GO2S6wZyL99zNmGtYAGUgKHpq4NVNMF&location=${formatted}`)
@@ -14,7 +20,10 @@ exports.searchMapCordinates = (req, res, next) => {
       })
 
     }).catch(error => {
-      console.log(error);
+      console.log(error.response.data);
+      return res.status(201).json({
+        message  : error.response.data
+      })
     });
 
 };
