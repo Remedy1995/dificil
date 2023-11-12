@@ -38,21 +38,21 @@ exports.createShippingOrder = async (req, res, next) => {
                      country_latitude: latitude,
                      country_longitude: longitude,
                      email: email,
-                     ItemName: req.body.ItemName.replace(/[^a-zA-Z ]/g, ""),
-                     itemsDescription: req.body.itemsDescription.replace(/[^a-zA-Z ]/g, ""),
+                     ItemName: req.body.ItemName,
+                     itemsDescription: req.body.itemsDescription,
                      orderDate: formatdate.getDate(),
                      deliveryDate: req.body.date,
                      consignment_number: value,
-                     trackingstatus: req.body.trackingstatus.replace(/[^a-zA-Z ]/g, ""),
-                     remarks: req.body.remarks.replace(/[^a-zA-Z ]/g, ""),
-                     quantity: req.body.quantity.replace(/[^a-zA-Z ]/g, ""),
+                     trackingstatus: req.body.trackingstatus,
+                     remarks: req.body.remarks,
+                     quantity: req.body.quantity,
                      country: country,
-                     ShipperName: req.body.ShipperName.replace(/[^a-zA-Z ]/g, ""),
-                     ShipperAddress: req.body.ShipperAddress.replace(/[^a-zA-Z ]/g, ""),
-                     ShipperPhone: req.body.ShipperPhone.replace(/[^a-zA-Z ]/g, ""),
-                     RecieverName: req.body.ReceiverAddress.replace(/[^a-zA-Z ]/g, ""),
-                     ReceiverAddress: req.body.ReceiverAddress.replace(/[^a-zA-Z ]/g, ""),
-                     ReceiverPhone: req.body.ReceiverPhone.replace(/[^a-zA-Z ]/g, ""),
+                     ShipperName: req.body.ShipperName,
+                     ShipperAddress: req.body.ShipperAddress,
+                     ShipperPhone: req.body.ShipperPhone,
+                     RecieverName: req.body.ReceiverName,
+                     ReceiverAddress: req.body.ReceiverAddress,
+                     ReceiverPhone: req.body.ReceiverPhone,
 
                   })
                   sendEmail.sendMail(createShipping);//send email
@@ -88,15 +88,15 @@ exports.createShippingOrder = async (req, res, next) => {
                         itemsDescription: req.body.itemsDescription, orderDate: formatdate.getDate(), deliveryDate: req.body.date.replace(/[^a-zA-Z ]/g, ""),
                         consignment_number: value, destination: destination, deliveryDate: req.body.date.replace(/[^a-zA-Z ]/g, ""),
                         consignment_number: value,
-                        trackingstatus: req.body.trackingstatus.replace(/[^a-zA-Z ]/g, ""),
-                        remarks: req.body.remarks.replace(/[^a-zA-Z ]/g, ""),
-                        quantity: req.body.quantity.replace(/[^a-zA-Z ]/g, ""),
-                        ShipperName: req.body.ShipperName.replace(/[^a-zA-Z ]/g, ""),
-                        ShipperAddress: req.body.ShipperAddress.replace(/[^a-zA-Z ]/g, ""),
-                        ShipperPhone: req.body.ShipperPhone.replace(/[^a-zA-Z ]/g, ""),
-                        RecieverName: req.body.ReceiverAddress.replace(/[^a-zA-Z ]/g, ""),
-                        ReceiverAddress: req.body.ReceiverAddress.replace(/[^a-zA-Z ]/g, ""),
-                        ReceiverPhone: req.body.ReceiverPhone.replace(/[^a-zA-Z ]/g, ""),
+                        trackingstatus: req.body.trackingstatus,
+                        remarks: req.body.remarks,
+                        quantity: req.body.quantity,
+                        ShipperName: req.body.ShipperName,
+                        ShipperAddress: req.body.ShipperAddress,
+                        ShipperPhone: req.body.ShipperPhone,
+                        RecieverName: req.body.RecieverName,
+                        ReceiverAddress: req.body.ReceiverAddress,
+                        ReceiverPhone: req.body.ReceiverPhone,
                      },
                      function (err, docs) {
                         if (err) res.json(err);
@@ -126,7 +126,7 @@ exports.createShippingOrder = async (req, res, next) => {
 exports.consignment = async (req, res, next) => {
    //generate consignment number to the front end
    try {
-      const cons = new consignment('Malark');
+      const cons = new consignment('Dificil');
       const gen = cons.generate();
       res.json({ message: gen });
       console.log(gen)

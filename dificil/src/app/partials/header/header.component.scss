@@ -1,3 +1,88 @@
+.top-header-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    justify-content: space-around;
+    background-color: black;
+    color: #00BCD4;
+    font-size: 13.5px;
+    height: 70px;
+    align-items: center;
+    font-weight: bold;
+}
+
+.fa-phone {
+    background-color: #00BCD4;
+    width: 30px;
+    height: 30px;
+    color: white;
+    border-radius: 20px;
+    text-align: center;
+    padding: 9px;
+}
+
+
+.fa-map-marker {
+    background-color: #00BCD4;
+    width: 30px;
+    height: 30px;
+    color: white;
+    border-radius: 20px;
+    text-align: center;
+    padding: 10px;
+}
+
+
+.fa-envelope-open-o {
+    background-color: #00BCD4;
+    width: 30px;
+    height: 30px;
+    color: white;
+    border-radius: 23px;
+    text-align: center;
+    padding: 8px;
+}
+
+
+.header-address {
+    text-align: center;
+}
+
+.header-phone {
+    text-align: center;
+}
+
+.header-email {
+    text-align: center;
+}
+
+.header-email a {
+    margin-left: 5px;
+    color: #00BCD4;;
+}
+
+
+.header-phone a {
+    margin-left: 5px;
+    color: #00BCD4;
+}
+
+
+.mobile {
+    color: white;
+    padding: 9px;
+    border-radius: 24px;
+    background-color: black;
+    width: 33px;
+    text-align: center;
+}
+
+
+
+
+
+
+
 .myemail {
     padding: 20px;
 }
@@ -5,19 +90,83 @@
 .logo-image {
     width: 100px;
     border-radius: 0%;
-    
-}
 
-@media screen and (min-width:768px) {
-    .logo-image {
-    width: 100px;
-    border-radius: 0%;
-    }
 }
 
 @media screen and (max-width:768px) {
     .logo-image {
+        width: 100px;
         border-radius: 0%;
-        width: 50px;
     }
+.header-phone a {
+    color: white;
+}
+    .header-email a {
+        color: white;
+        margin-left: 5px;
+        position: relative;
+        top: 2px;
+    }
+    div.top-header-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: black;
+        padding: 0px;
+        align-items: center;
+        color: white;
+        font-size: 14px;
+        height: 117px;
+        line-height: 14px;
+    }
+
+    .div.header-address{
+        text-align: center;
+        margin: 5px;
+    }
+    .header-phone {
+        text-align: center;
+        margin: 3px;
+    } 
+    
+    .header-email {
+        text-align: center;
+        margin: -3px;
+    }
+    
+.fa-phone {
+    background-color: #00BCD4;
+    width: 20px;
+    height: 20px;
+    color: white;
+    border-radius: 20px;
+    text-align: center;
+    padding: 4px;
+    font-size: 10px;
+}
+
+
+.fa-map-marker {
+    background-color: #00BCD4;
+    width: 20px;
+    height: 20px;
+    color: white;
+    border-radius: 20px;
+    text-align: center;
+    padding: 4px;
+    font-size: 10px;
+}
+
+
+.fa-envelope-open-o {
+    background-color: #00BCD4;
+    width: 20px;
+    height: 20px;
+    color: white;
+    border-radius: 23px;
+    text-align: center;
+    padding: 4px;
+    font-size: 10px;
+}
+
 }

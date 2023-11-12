@@ -176,7 +176,7 @@ nav {
 	display: initial;
 	margin: 0;
 	letter-spacing: 0px;
-	color: #00BCD4;
+	color: white;
 	;
 	font-weight: 600;
 	padding: 3px 0;
@@ -184,7 +184,7 @@ nav {
 }
 
 #logo a span.fa {
-	color: #00BCD4;
+	color: white;
 }
 
 
@@ -1960,7 +1960,7 @@ ul.team-social li a span.fa {
 	}
 
 	#logo a {
-		font-size: .65em;
+		font-size: 16px;
 	}
 
 	.inner-banner {
@@ -2057,7 +2057,7 @@ ul.team-social li a span.fa {
 	}
 
 	.w3ls-contact p {
-		font-size: 14px;
+		font-size: 11px;
 	}
 }
 
@@ -2171,7 +2171,7 @@ ul.team-social li a span.fa {
 	}
 
 	#logo a {
-		font-size: .6em;
+		font-size: 17px;
 	}
 
 	.agileinfo-logo h2 {
