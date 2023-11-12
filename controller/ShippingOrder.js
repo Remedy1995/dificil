@@ -3,7 +3,7 @@ const consignment = require('../helpers/helper');
 const sendEmail = require('../controller/email');//send email information to email user
 require('dotenv').config();
 const formatdate = require('../helpers/formatDate');
-const consign = new consignment("MALACK");
+const consign = new consignment("Dificil");
 const axios = require('axios');
 
 exports.createShippingOrder = async (req, res, next) => {
@@ -16,11 +16,11 @@ exports.createShippingOrder = async (req, res, next) => {
       return false;
    }
    ShippingOrder.find({ 'email': new RegExp(email, 'i') }).then(data => {
-      console.log('my email data',data)
+      console.log('my email data', data)
       if (data.length === 0) {
          //if email does not exist record new data;
-         const country = req.body.country.replace(/[^a-zA-Z ]/g, "");;
-         const destination = req.body.destination.replace(/[^a-zA-Z ]/g, "");
+         const country = req.body.country;
+         const destination = req.body.destination;
          const data = [];
          axios.get(process.env.MAP_URL + `${destination}`)
             .then(response => {
@@ -49,7 +49,7 @@ exports.createShippingOrder = async (req, res, next) => {
                      country: country,
                      ShipperName: req.body.ShipperName,
                      ShipperAddress: req.body.ShipperAddress,
-                     ShipperPhone: req.body.ShipperPhone,
+                     ShipperPhone: req.body?.ShipperPhone,
                      RecieverName: req.body.ReceiverName,
                      ReceiverAddress: req.body.ReceiverAddress,
                      ReceiverPhone: req.body.ReceiverPhone,
@@ -72,7 +72,7 @@ exports.createShippingOrder = async (req, res, next) => {
          //if email exists update the existing data;
          const country = req.body.country;
          const data = [];
-         const destination = req.body.destination.replace(/[^a-zA-Z ]/g, "");
+         const destination = req.body.destination;
          axios.get(process.env.MAP_URL + `${destination}`)
             .then(response => {
                data.push(response.data);
@@ -84,10 +84,15 @@ exports.createShippingOrder = async (req, res, next) => {
                   const value = consign.generate();
                   ShippingOrder.updateMany({ email: req.body.email },
                      {
-                        country: country, country_latitude: latitude, country_longitude: longitude, ItemName: req.body.ItemName.replace(/[^a-zA-Z ]/g, ""),
-                        itemsDescription: req.body.itemsDescription, orderDate: formatdate.getDate(), deliveryDate: req.body.date.replace(/[^a-zA-Z ]/g, ""),
-                        consignment_number: value, destination: destination, deliveryDate: req.body.date.replace(/[^a-zA-Z ]/g, ""),
+                        country: country,
+                        country_latitude: latitude,
+                        country_longitude: longitude,
+                        ItemName: req.body.ItemName,
+                        itemsDescription: req.body.itemsDescription,
+                        orderDate: formatdate.getDate(),
+                        deliveryDate: req.body.date,
                         consignment_number: value,
+                        destination: destination,
                         trackingstatus: req.body.trackingstatus,
                         remarks: req.body.remarks,
                         quantity: req.body.quantity,
