@@ -49,8 +49,8 @@ exports.createShippingOrder = async (req, res, next) => {
                      country: country,
                      ShipperName: req.body.ShipperName,
                      ShipperAddress: req.body.ShipperAddress,
-                     ShipperPhone: req.body?.ShipperPhone,
-                     RecieverName: req.body.ReceiverName,
+                     ShipperPhone: req.body.ShipperPhone,
+                     RecieverName: req.body.RecieverName,
                      ReceiverAddress: req.body.ReceiverAddress,
                      ReceiverPhone: req.body.ReceiverPhone,
 
