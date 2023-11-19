@@ -7,6 +7,7 @@ const consign = new consignment("Dificil");
 const axios = require('axios');
 
 exports.createShippingOrder = async (req, res, next) => {
+   console.log(req.body)
    const email = req.body.email;
 
    if (!req.body.destination) {
@@ -40,7 +41,7 @@ exports.createShippingOrder = async (req, res, next) => {
                      email: email,
                      ItemName: req.body.ItemName,
                      itemsDescription: req.body.itemsDescription,
-                     orderDate: formatdate.getDate(),
+                     orderDate: req.body.order_date,
                      deliveryDate: req.body.date,
                      consignment_number: value,
                      trackingstatus: req.body.trackingstatus,
@@ -89,7 +90,7 @@ exports.createShippingOrder = async (req, res, next) => {
                         country_longitude: longitude,
                         ItemName: req.body.ItemName,
                         itemsDescription: req.body.itemsDescription,
-                        orderDate: formatdate.getDate(),
+                        orderDate: req.body.order_date,
                         deliveryDate: req.body.date,
                         consignment_number: value,
                         destination: destination,

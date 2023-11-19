@@ -2,8 +2,8 @@
 <!-- inner banner -->
 <div class="inner-banner" id="home">
 	<div class="container">
-		
-	</div>	
+
+	</div>
 </div>
 <!-- inner banner -->
 
@@ -17,7 +17,8 @@
         [leafletOptions]="mapOptions">
     </div>
 		<div class="main_grid_contact">
-			<div class="form">
+			<div class="form"  style="position: relative;
+      top: 6px;">
 				<h3 class="text-capitalize mb-2">Tracking Information</h3>
                    <div class="row">
 					<div class="col-lg-12">
@@ -25,10 +26,10 @@
 							<span class="fa fa-home" aria-hidden="true" ng-model="gettracking"  [ngStyle]="gettracking==='Checked'?{'color': '#00BCD4'}:{'color': '#817272'}" >&nbsp;&nbsp;On hold</span>
 							&nbsp;	&nbsp;<span class="fa fa-cogs" aria-hidden="true" [ngStyle]="gettracking==='Processing'?{'color': '#00BCD4'}:{'color': '#817272'}" >&nbsp;&nbsp;Processing</span>&nbsp;&nbsp;
 							<span class="fa fa-truck" aria-hidden="true"  [ngStyle]="gettracking==='In-transit'?{'color': '#00BCD4'}:{'color': '#817272'}" >&nbsp;&nbsp;In-transit</span>&nbsp;&nbsp;
-							<span class="fa fa-ship" aria-hidden="true"  [ngStyle]="gettracking==='Picked Up'?{'color': '#00BCD4'}:{'color': '#817272'}" >&nbsp;&nbsp;Picked Up</span>
+							<span class="fa fa-ship" aria-hidden="true"  [ngStyle]="gettracking==='Picked Up'?{'color': '#00BCD4'}:{'color': '#817272'}" >&nbsp;&nbsp;Pick Up</span>
 						</div>
 
-			
+
 					<table class="table table-striped">
 						<thead>
 						  <tr>
@@ -44,10 +45,10 @@
 						  <tr>
 							<th scope="row">Final Destination</th>
 							<td>{{getdestination | titlecase}}</td>
-							
+
 						  </tr>
 						  <tr>
-							<th scope="row">Picked Up Date</th>
+							<th scope="row">Order Date</th>
 							<td>{{getdate}}</td>
 						  </tr>
 						  <tr>
@@ -72,7 +73,7 @@
 						  </tr>
 						</tbody>
 					  </table>
-					  
+
 					<table class="table table-striped">
 						<thead>
 						  <tr style="background: #e0e7f9;">
@@ -88,7 +89,7 @@
 						  <tr>
 							<th scope="row">Shipper Address</th>
 							<td>{{ShipperAddress | titlecase}}</td>
-							
+
 						  </tr>
 						  <tr>
 							<th scope="row">Shipper Phone</th>
@@ -105,7 +106,7 @@
 							<th scope="col"> Information</th>
 						  </tr>
 						</thead>
-						<tbody> 
+						<tbody>
 						  <tr>
 							<th scope="row">Receiver Name</th>
 							<td>{{RecieverName | titlecase}}</td>
@@ -113,7 +114,7 @@
 						  <tr>
 							<th scope="row">Receiver Address</th>
 							<td>{{ReceiverAddress | titlecase}}</td>
-							
+
 						  </tr>
 						  <tr>
 							<th scope="row">Receiver Phone</th>
@@ -124,14 +125,14 @@
                 </div>
 				</div>
 			</div>
-			<app-contact-information></app-contact-information>
+      <!-- <app-contact-information></app-contact-information> -->
 		</div>
 	</div>
 </section>
 <!-- //contact -->
 
 <!-- footer-top -->
-<section class="footer-top py-5">
+<!-- <section class="footer-top py-5">
 	<div class="container">
 		<div class="row footer-top-grid">
 			<div class="col-sm-6">
@@ -143,8 +144,9 @@
 			</div>
 		</div>
 	</div>
-</section>
+</section> -->
 <!-- //footer-top -->
+<app-contact-number></app-contact-number>
 
 <!--footer -->
 <app-footer></app-footer>

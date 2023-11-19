@@ -33,10 +33,11 @@ export class CreateShippingComponent implements OnInit {
     quantity: new FormControl(''),
     trackingstatus: new FormControl('', Validators.required),
     date: new FormControl(''),
-    ShipperName:new FormControl('', Validators.required) ,
+    order_date: new FormControl(''),
+    ShipperName: new FormControl('', Validators.required),
     ShipperAddress: new FormControl('', Validators.required),
     ShipperPhone: new FormControl('', Validators.required),
-    RecieverName:new FormControl('', Validators.required),
+    RecieverName: new FormControl('', Validators.required),
     ReceiverAddress: new FormControl('', Validators.required),
     ReceiverPhone: new FormControl('', Validators.required),
 
@@ -52,9 +53,9 @@ export class CreateShippingComponent implements OnInit {
       this.showspinner = true;
       this.service.createShipping(this.shippingInformation.value).subscribe({
 
-        
+
         next: (data) => {
-          //set our notification 
+          //set our notification
           this.notification = data.message;
           if (data) {
             setTimeout(() => {

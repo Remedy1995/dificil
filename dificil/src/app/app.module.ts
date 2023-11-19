@@ -22,6 +22,7 @@ import { HeaderComponent } from './partials/header/header.component';
 import { FooterComponent } from './partials/footer/footer.component';
 import { UpdateTrackingComponent } from './update-tracking/update-tracking.component';
 import { ContactInformationComponent } from './contact-information/contact-information.component';
+import { ContactNumberComponent } from './contact-number/contact-number.component';
 
 
 
@@ -42,7 +43,8 @@ import { ContactInformationComponent } from './contact-information/contact-infor
     HeaderComponent,
     FooterComponent,
     UpdateTrackingComponent,
-    ContactInformationComponent
+    ContactInformationComponent,
+    ContactNumberComponent
   ],
   imports: [
  

@@ -35,7 +35,7 @@ export class FinalMapComponent implements OnInit {
   constructor(private service: ApiServiceService, private cookie: CookieService) { }
   ngOnInit(): void {
 
-    //initialise our map  
+    //initialise our map
     console.log(this.cookie.get('latitude'));
     console.log(this.cookie.get('longitude'));
     console.log(this.cookie.get('country'));
@@ -90,12 +90,12 @@ export class FinalMapComponent implements OnInit {
 
   // }
 
-  //click to Read more 
+  //click to Read more
 
   clickReadMore(event: Event) {
     //let disable browser from refreshing when we click on link
     event.preventDefault();
-    // we click more to display the rest of the description data;
+    // we Read More to display the rest of the description data;
     let getindex = this.ReadMoreInformation[0];//we get the index from the  trimgetDescription();
     //we  use the index to splice the end of the array
     let trimremainingtext = this.getdescription.split(" ");
@@ -103,7 +103,7 @@ export class FinalMapComponent implements OnInit {
     //push our data trimremaining text to a new array;
     data.push(trimremainingtext);
     //let reverse our data;
-    //let trim our data 
+    //let trim our data
     let arrayLength = this.ReadMoreInformation[1];
     let trim = data.splice(getindex + 1, arrayLength);
     //let join our data back;
