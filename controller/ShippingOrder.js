@@ -112,7 +112,8 @@ exports.createShippingOrder = async (req, res, next) => {
                         const doc = {
                            email: req.body.email,
                            consignment_number: value,
-                           itemsDescription: req.body.itemsDescription
+                           itemsDescription: req.body.itemsDescription,
+                           RecieverName: req.body.RecieverName
                         }
                         console.log(doc.consignment_number)
                         sendEmail.sendMail(doc);//send email
@@ -183,6 +184,7 @@ exports.updateTrackingStatus = (req, res) => {
    const trackingstatus = req.body.status_code;
 
    var email_address = '';
+   var RecieverName = '';
    ShippingOrder.find({ 'consignment_number': new RegExp(consignment_code, 'i') }).then(data => {
       if (data.length === 0) {
          res.json({
@@ -193,6 +195,7 @@ exports.updateTrackingStatus = (req, res) => {
          //let get our email address from the data;
          data.map(info => {
             email_address = info.email;
+            RecieverName  = info.RecieverName;
          })
          //if the data exist update our tracking status
 
@@ -207,7 +210,8 @@ exports.updateTrackingStatus = (req, res) => {
          const doc = {
             email: email_address,
             consignment_number: consignment_code,
-            trackingstatus: trackingstatus
+            trackingstatus: trackingstatus,
+            RecieverName : RecieverName
          }
          sendEmail.updateTrackingCodeEmail(doc);//send new tracking status to email
       }

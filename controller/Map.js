@@ -20,9 +20,9 @@ exports.searchMapCordinates = (req, res, next) => {
       })
 
     }).catch(error => {
-      console.log(error.response.data);
+      console.log(error);
       return res.status(201).json({
-        message  : error.response.data
+        message  : error
       })
     });
 
