@@ -20,11 +20,11 @@ export class ContactUsComponent implements OnInit {
   showSpinner: boolean = false;
   contactInformation = new FormGroup(
     {
-      fullname: new FormControl('kkkk', Validators.required),
-      subject: new FormControl('knk;n', Validators.required),
-      email: new FormControl('adjetadjetey45@gmail.com', Validators.required),
-      phone: new FormControl('oijoiji', Validators.required),
-      message: new FormControl('iuiupiuhi', Validators.required)
+      fullname: new FormControl('', Validators.required),
+      subject: new FormControl('', Validators.required),
+      email: new FormControl('', Validators.required),
+      phone: new FormControl('', Validators.required),
+      message: new FormControl('', Validators.required)
     })
 
   constructor(private service: ApiServiceService, private cookie: CookieService) { }
