@@ -9,42 +9,42 @@
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-            background-color: #f5f5f5; /* Set a light background color for the body */
+            background-color: #f5f5f5;
         }
 
         .container {
             width: 100%;
-            
-            margin: 0 auto;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         .header {
-            background-color: #00BCD4; /* Red background for the heading */
+            background-color: #00BCD4;
             text-align: center;
             padding: 10px;
-            color: #fff; /* White text color for the heading */
+            color: #fff;
         }
 
         .body {
-            background-color: rgba(255, 255, 255, 0.9); /* Transparent background for the body */
-            padding: 90px;
-            text-align: center;
+            background-color: #ffffff;
+            padding: 20px;
+            text-align: left;
         }
 
         .footer {
-            background-color: #00BCD4; /* Black background for the footer */
-            color: #fff; /* White text color for the footer */
+            background-color: #00BCD4;
+            color: #fff;
             text-align: center;
             padding: 10px;
             font-weight: bold;
         }
 
-        .view-button{
-            padding: 20px;
+        .view-button {
+            display: inline-block;
+            padding: 10px 20px;
             font-weight: bold;
             background-color: #000;
-            position: relative;
-            top: 40px;
             border-radius: 20px;
             text-decoration: none;
             color: white;
@@ -55,21 +55,19 @@
     <div class="container">
         <div class="header">
             <h1>Dificil Security Premier</h1>
-            <p style="font-weight: bold;font-style: oblique;">Your Number 1 Logistics Service Provider</p>
+            <p style="font-weight: bold; font-style: oblique;">Your Number 1 Logistics Service Provider</p>
         </div>
         <div class="body">
-            <p style="font-size: 17px;color: blue;font-weight: bold;">Hello Admin,</p>
+            <p style="font-size: 17px; color: blue; font-weight: bold;">Hello Admin,</p>
             <div>
-                 <p style="color: #000;padding: 5px;font-size: 17px;">Admin you have recieved a new Request For your Attention</p>
+                 <p style="color: #000; padding: 5px; font-size: 17px;">Admin, you have received a new request for your attention</p>
                  <h1>Details of Request</h1>
-                 <p style="font-size: 17px;color: #000;">{{params.email}}</p>
-                 <p style="font-size: 17px;color: #000;">{{params.subject}}</p>
-                 <p style="font-size: 17px;color: #000;">{{params.phone}}</p>
-                 <p style="font-size: 17px;color: #000;">{{params.fullname}}</p>
-                 <p style="font-size: 17px;color: #000;">{{params.message}}</p>
-
+                 <p style="font-size: 17px; color: #000;"><strong>Email:</strong> {{params.email}}</p>
+                 <p style="font-size: 17px; color: #000;"><strong>Subject:</strong> {{params.subject}}</p>
+                 <p style="font-size: 17px; color: #000;"><strong>Phone:</strong> {{params.phone}}</p>
+                 <p style="font-size: 17px; color: #000;"><strong>Full Name:</strong> {{params.fullname}}</p>
+                 <p style="font-size: 17px; color: #000;"><strong>Message:</strong> {{params.message}}</p>
             </div>
-            
         </div>
         <div class="footer">
             <p>© 2023 Dificil Security Company. All Rights Reserved | Dificil Security Company.</p>

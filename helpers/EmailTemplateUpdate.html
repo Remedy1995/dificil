@@ -9,42 +9,40 @@
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-            background-color: #f5f5f5; /* Set a light background color for the body */
+            background-color: #f5f5f5;
         }
 
         .container {
             width: 100%;
-            
             margin: 0 auto;
         }
 
         .header {
-            background-color: #00BCD4; /* Red background for the heading */
+            background-color: #00BCD4;
             text-align: center;
             padding: 10px;
-            color: #fff; /* White text color for the heading */
+            color: #fff;
         }
 
         .body {
-            background-color: rgba(255, 255, 255, 0.9); /* Transparent background for the body */
-            padding: 90px;
-            text-align: center;
+            background-color: #ffffff;
+            padding: 20px;
+            text-align: left;
         }
 
         .footer {
-            background-color: #00BCD4; /* Black background for the footer */
-            color: #fff; /* White text color for the footer */
+            background-color: #00BCD4;
+            color: #fff;
             text-align: center;
             padding: 10px;
             font-weight: bold;
         }
 
-        .view-button{
-            padding: 20px;
+        .view-button {
+            display: inline-block;
+            padding: 10px 20px;
             font-weight: bold;
             background-color: #000;
-            position: relative;
-            top: 40px;
             border-radius: 20px;
             text-decoration: none;
             color: white;
@@ -55,25 +53,20 @@
     <div class="container">
         <div class="header">
             <h1>Dificil Security Premier</h1>
-            <p style="font-weight: bold;font-style: oblique;">Your Number 1 Logistics Service Provider</p>
+            <p style="font-weight: bold; font-style: oblique;">Your Number 1 Logistics Service Provider</p>
         </div>
         <div class="body">
-            <h3>Hello {{params.username}}</h3>
+            <h3>Hello {{params.username}},</h3>
             <div>
-                <h2 style="text-align: center;color: #000;">Thank You for your Recent Order</h2>
-                <p style="line-height: 12px;font-size: 17px;color: #000;">
+                <h2 style="text-align: center; color: #000;">Thank You for your Recent Order</h2>
+                <p style="font-size: 17px; line-height: 1.6;">
                     Your tracking order has been updated to <strong>{{params.update}}</strong> </p>
-                    <p style="color: #000;font-size: 17px;">and your consignment code is<strong> {{params.consignment}}</strong></p>
-                  <p style="color: #000;font-size: 17px;">Your goods will be delivered in the next few days.Thank you.</p>
-                
-                   <p style="font-size: 17px;color: #000;line-height: 10px;padding: 15px;margin-top: 20px;">Click on the web link below to track your goods.</p>
-                   <br/>
-                   <br/>
+                <p style="font-size: 17px; color: #000;">and your consignment code is<strong> {{params.consignment}}</strong></p>
+                <p style="font-size: 17px; color: #000;">Your goods will be delivered in the next few days. Thank you.</p>
     
-                   <a href="https://www.dificilsecuritypremier.com/view-map" style="color: white;margin-bottom: 20px;" class="view-button">Click To View Tracking Order</a>
-                   
+                <p style="font-size: 17px; color: #000; line-height: 1.6; padding: 15px; margin-top: 20px;">Click on the web link below to track your goods.</p>
+                <a href="https://www.dificilsecuritypremier.com/view-map" style="color: white; display: block; margin-bottom: 20px;" class="view-button">Click To View Tracking Order</a>
             </div>
-            
         </div>
         <div class="footer">
             <p>© 2023 Dificil Security Company. All Rights Reserved | Dificil Security Company.</p>
